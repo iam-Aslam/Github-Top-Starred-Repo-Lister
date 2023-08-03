@@ -24,9 +24,7 @@ class Home extends StatelessWidget {
             builder: (context, provider, _) {
               if (provider.repositories.isEmpty) {
                 provider.fetchData();
-                return const Center(
-                  child: CircularProgressIndicator(),
-                );
+                return const Center(child: CircularProgressIndicator());
               } else {
                 return ListView.separated(
                   itemCount: provider.repositories.length,
