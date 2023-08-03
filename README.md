@@ -10,6 +10,7 @@ The Top Starred Repos Flutter App includes the following features:
 4 - Pull-to-Refresh: Allows users to pull down the repository list to refresh and get the latest data from the GitHub API.
 5 - Error Handling: Provides a robust error-handling mechanism to gracefully handle API errors and connectivity issues.
 6 - Responsive UI: The app's user interface is designed to be responsive and work well on different screen sizes.
+7 - Unit test: The app has successfully completed the unit test.
 
 Project Structure:-
 The project follows the Model-View-Controller (MVC) architectural pattern to keep the codebase well-organized and maintainable. Here's a brief overview of the project structure:
