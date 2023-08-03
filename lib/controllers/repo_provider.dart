@@ -14,7 +14,7 @@ class RepositoryProviderModel extends ChangeNotifier {
     String getDateTwoMonthsAgo() {
       var now = DateTime.now();
       var twoMonthsAgo =
-          now.subtract(const Duration(days: 60)); // 60 days = 2 months
+          now.subtract(const Duration(days: 30)); // 60 days = 2 months
       var formatter = DateFormat('yyyy-MM-dd');
       return formatter.format(twoMonthsAgo);
     }
