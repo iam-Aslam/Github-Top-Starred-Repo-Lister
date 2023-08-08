@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:githubapi/controllers/repo_provider.dart';
+import 'package:githubapi/models/repo_box.dart';
+import 'package:githubapi/models/repository_hive_model.dart';
 import 'package:githubapi/views/home/widgets/card.dart';
 import 'package:provider/provider.dart';
 
@@ -33,21 +35,23 @@ class Home extends StatelessWidget {
                   provider.fetchData();
                   return const Center(child: CircularProgressIndicator());
                 } else {
+                  final dataBase = RepositoryBox.getInstance();
+                  List<RepositroyHive> list = dataBase.values.toList();
                   return ListView.separated(
-                    itemCount: provider.repositories.length,
+                    itemCount: list.length,
                     separatorBuilder: (context, index) {
                       return SizedBox(
                         height: MediaQuery.of(context).size.height / 60,
                       );
                     },
                     itemBuilder: (context, index) {
-                      final repository = provider.repositories[index];
+                      final repository = list[index];
                       return ListCard(
-                        title: repository.title,
-                        description: repository.description,
-                        imageUrl: repository.imageUrl,
-                        user: repository.user,
-                        starCount: repository.starCount,
+                        title: repository.title!,
+                        description: repository.description!,
+                        imageUrl: repository.imageUrl!,
+                        user: repository.user!,
+                        starCount: repository.starCount!,
                       );
                     },
                   );
