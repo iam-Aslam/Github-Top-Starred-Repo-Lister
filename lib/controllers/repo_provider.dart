@@ -10,8 +10,7 @@ class RepositoryProviderModel extends ChangeNotifier {
   // This method will get the exact data from before 60 days
   String getDateTwoMonthsAgo() {
     var now = DateTime.now();
-    var twoMonthsAgo =
-        now.subtract(const Duration(days: 30)); // 60 days = 2 months
+    var twoMonthsAgo = now.subtract(const Duration(days: 30));
     var formatter = DateFormat('yyyy-MM-dd');
     return formatter.format(twoMonthsAgo);
   }

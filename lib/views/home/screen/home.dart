@@ -24,7 +24,7 @@ class Home extends StatelessWidget {
           onRefresh: () async {
             // will Refresh the data
             final provider =
-                Provider.of<RepositoryProviderModel>(context, listen: false);
+                Provider.of<RepositoryProviderModel>(context, listen: true);
             await provider.fetchData();
           },
           child: Padding(
